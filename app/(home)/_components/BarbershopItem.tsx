@@ -12,7 +12,8 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
     <Card className="min-w-[167px] max-w-[167px] rounded-2xl">
       <CardContent className="px-0 py-0">
         <div className="w-full h-[159px] relative">
-            <Badge variant="secondary" className="flex items-center gap-1 absolute top-3 left-3 z-50 opacity-90">
+            
+            <Badge variant="secondary" className="flex items-center justify-center gap-1 absolute top-2 left-3 z-50 opacity-90">
                 <StarIcon fontSize={12} className="fill-primary text-primary"/>
                 <span className="text-xs">5,0</span>
             </Badge>
