@@ -4,6 +4,7 @@ import { ChevronLeftIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import BarbershopInfo from "./_components/BarbershopInfo";
+import ServiceItem from "./_components/ServiceItem";
 
 type BarbershopsDetailsProps = {
   params: {
@@ -19,6 +20,9 @@ const BarbershopDetailsPage = async ({ params }: BarbershopsDetailsProps) => {
     where: {
       id: params.id,
     },
+    include: {
+      services: true,
+    },
   });
   if (!barbershop) {
     // TODO: redirecionar para home
@@ -27,6 +31,11 @@ const BarbershopDetailsPage = async ({ params }: BarbershopsDetailsProps) => {
   return (
     <div>
       <BarbershopInfo barbershop={barbershop} />
+      <div className="px-5 flex flex-col gap-4 py-6">
+        {barbershop.services.map((service) => (
+          <ServiceItem key={service.id} service={service} />
+        ))}
+      </div>
     </div>
   );
 };
