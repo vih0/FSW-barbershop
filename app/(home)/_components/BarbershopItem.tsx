@@ -3,7 +3,8 @@ import { Badge } from "@/app/_components/ui/badge";
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Barbershop } from "@prisma/client";
-import { StarIcon } from "@radix-ui/react-icons";
+
+import { StarIcon, StarsIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -23,7 +24,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             variant="secondary"
             className="flex items-center justify-center gap-1 absolute top-2 left-3 z-50 opacity-90"
           >
-            <StarIcon fontSize={12} className="fill-primary text-primary" />
+            <StarIcon size={12} className="fill-primary text-primary mb-0.5" />
             <span className="text-xs">5,0</span>
           </Badge>
           <Image
