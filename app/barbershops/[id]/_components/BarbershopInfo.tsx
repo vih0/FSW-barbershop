@@ -1,6 +1,8 @@
 "use client";
 
+import SideMenu from "@/app/_components/SideMenu";
 import { Button } from "@/app/_components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/app/_components/ui/sheet";
 import { Barbershop } from "@prisma/client";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ChevronLeftIcon, MapPinIcon, StarIcon } from "lucide-react";
@@ -23,13 +25,22 @@ const BarbershopInfo = ({ barbershop }: { barbershop: Barbershop }) => {
         >
           <ChevronLeftIcon />
         </Button>
-        <Button
-          size="icon"
-          variant="outline"
-          className="z-50 absolute top-4 right-4"
-        >
-          <HamburgerMenuIcon />
-        </Button>
+
+        <Sheet>
+          <SheetTrigger>
+            <Button
+              size="icon"
+              variant="outline"
+              className="z-50 absolute top-4 right-4"
+            >
+              <HamburgerMenuIcon />
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent>
+            <SideMenu />
+          </SheetContent>
+        </Sheet>
         <Image
           src={barbershop.imageUrl}
           alt={barbershop.name}
