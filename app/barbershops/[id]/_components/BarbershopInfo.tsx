@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import SideMenu from "@/app/_components/SideMenu";
-import { Button } from "@/app/_components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/app/_components/ui/sheet";
-import { Barbershop } from "@prisma/client";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { ChevronLeftIcon, MapPinIcon, StarIcon } from "lucide-react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import SideMenu from '@/app/_components/SideMenu'
+import { Button } from '@/app/_components/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/app/_components/ui/sheet'
+import { Barbershop } from '@prisma/client'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { ChevronLeftIcon, MapPinIcon, StarIcon } from 'lucide-react'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 const BarbershopInfo = ({ barbershop }: { barbershop: Barbershop }) => {
-  const router = useRouter();
+  const router = useRouter()
   const handleBackClick = () => {
-    router.back();
-  };
+    router.back()
+  }
   return (
     <div>
       <div className="h-[250px] w-full relative">
@@ -45,7 +45,7 @@ const BarbershopInfo = ({ barbershop }: { barbershop: Barbershop }) => {
           src={barbershop.imageUrl}
           alt={barbershop.name}
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <div className="px-5 pt-3 pb-6 border-b border-solid border-secondary">
@@ -60,6 +60,6 @@ const BarbershopInfo = ({ barbershop }: { barbershop: Barbershop }) => {
         </div>
       </div>
     </div>
-  );
-};
-export default BarbershopInfo;
+  )
+}
+export default BarbershopInfo
